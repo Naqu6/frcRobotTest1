@@ -18,7 +18,7 @@ public:
 	virtual ~DriveTrain();
 	void setSpeed(float fowardX,float fowardY);
 	void driveDistance(float distance);
-	void setLifter(float value);
+	
 
 private:
 	Victor leftVictor1;
@@ -41,21 +41,8 @@ private:
 	PIDController rightPIDController1;
 	PIDController rightPIDController2;
 
-	PIDController lifterPIDController1;
-	PIDController lifterPIDController2;
-
-	enum State{
-			TELEOP,
-			PID_CONTROL
-		};
-
-	State lifterState;
-
-
 	void setRight(float speed);
 	void setLeft(float speed);
-	void setLifterVictors(float value);
-	bool getLifterError();
 };
 
 #endif /* SRC_DRIVETRAIN_H_ */
